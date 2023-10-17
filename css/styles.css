@@ -9,6 +9,8 @@
   --grey-color: #2e2f42b2;
   --light-slate-color: #8e8f99;
   --green-color: #31d0aa;
+  --navy-blue-modal: #2e2f4266;
+  --modal-background: #fcfcfc;
   --second-heading-size: 36px;
   --second-heading-weight: 700;
   --third-heading-size: 20px;
@@ -525,4 +527,30 @@ button {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--navy-blue-modal);
+}
+
+.modal {
+  margin: 100px auto;
+  background-color: var(--modal-background);
+  width: 408px;
+  height: 584px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
 }
