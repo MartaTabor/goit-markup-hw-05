@@ -531,16 +531,26 @@ button {
 
 .backdrop {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
+  inset: 0 0 auto;
+  min-height: 100vh;
   background-color: var(--navy-blue-modal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: all;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .modal {
-  margin: 100px auto;
   background-color: var(--modal-background);
   width: 408px;
   height: 584px;
@@ -549,8 +559,25 @@ button {
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
 }
 
-.is-hidden {
-  pointer-events: none;
-  visibility: hidden;
-  opacity: 0;
+.close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cornflower-color);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--navy-blue-color);
+  margin: 24px 24px auto auto;
+}
+
+.close-button-icon {
+  fill: currentColor;
+}
+
+.close-button:hover,
+.close-button:focus {
+  background-color: var(--ocean-color);
+  color: var(--white-color);
 }
