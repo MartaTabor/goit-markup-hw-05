@@ -552,6 +552,31 @@ button {
   letter-spacing: 0.02em;
 }
 
+.overlay-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris-color);
+  color: var(--cloud-color);
+  font-family: Roboto;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.overlay-box:hover .overlay {
+  transform: translateY(0);
+}
+
 .backdrop {
   position: fixed;
   inset: 0 0 auto;
