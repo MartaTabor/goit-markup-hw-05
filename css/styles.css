@@ -582,7 +582,7 @@ button {
 
 .overlay-box:hover .overlay,
 .overlay-box:focus .overlay {
-  transform: translateY(0);
+  transform: translateY(0%);
 }
 
 .backdrop {
@@ -618,6 +618,9 @@ button {
 
 .close-button {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 24px;
   right: 24px;
   padding: 0;
